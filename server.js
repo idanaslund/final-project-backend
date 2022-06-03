@@ -83,7 +83,7 @@ const ReviewSchema = new mongoose.Schema({
   },
 })
 
-const Reviews = mongoose.model('Reviews', ReviewSchema)
+const Review = mongoose.model('Review', ReviewSchema)
 
 // Defines the port the app will run on. Defaults to 8080, but can be overridden
 // when starting the server. Example command to overwrite PORT env variable value:
@@ -252,6 +252,43 @@ app.post('/login', async (req, res) => {
     })
   }
 })
+
+
+//------- POST REVIEW -------//
+app.post('/reviews', authenticateUser, async (req, res) => {
+  const { _id } = req.user
+  const { review } = req.body
+
+  try {
+    const newReview = await new Review({
+      review: review,
+      user: _id
+    }).save()
+    if(newReview){
+      res.status(201).json({ 
+        response: {
+          review: newReview.review,
+          likes: newReview.likes,
+          user: newReview.user,
+          createdAt: newReview.createdAt
+        },  
+        success: true 
+      })
+    }else {
+      res.status(404).json({ 
+        response: 'Could not post review',
+        success: false  
+      })
+    }
+    
+  } catch (error) {
+    res.status(400).json({ 
+      response: error, 
+      success: false 
+    })
+  }
+})
+
 
 
 //-------------------------START SERVER-------------------------//
