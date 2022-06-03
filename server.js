@@ -63,7 +63,7 @@ const ReviewSchema = new mongoose.Schema({
     required: true,
     trim: true
   },
-  likes: {
+  like: {
     type: Number,
     default: 0
   },
@@ -264,11 +264,13 @@ app.post('/reviews', authenticateUser, async (req, res) => {
       review: review,
       user: _id
     }).save()
+
     if(newReview){
       res.status(201).json({ 
         response: {
+          _id: newReview._id,
           review: newReview.review,
-          likes: newReview.likes,
+          like: newReview.like,
           user: newReview.user,
           createdAt: newReview.createdAt
         },  
@@ -289,6 +291,57 @@ app.post('/reviews', authenticateUser, async (req, res) => {
   }
 })
 
+
+///--------DELETE REVIEWS----------///
+app.delete('/reviews/:id', authenticateUser, async (req, res) => {
+  const { id } = req.params
+  
+  try {
+    const deleted = await Review.findOneAndDelete({_id: id})
+    if (deleted) {
+      res.status(200).json({response: deleted, success: true})
+    } else {
+      res.status(404).json({response: 'Not found', success: false})
+    }
+  } catch (error) {
+    res.status(400).json({response: error, success: false})
+  }
+})
+
+
+///------LIST OF REVIEWS----------------///
+app.get('/reviews', authenticateUser, async (req,res) => {
+  // const {page, perPage} = req.query
+
+  try {
+    const allReviews = await Review.find({}).sort({createdAt: 'desc'}).limit(20)
+  if (allReviews) {
+    res.status(200).json(allReviews)
+  } else {
+    res.status(404).json({response: error, success: false})
+  }
+   
+  } catch (error) {
+    res.status(400).json({response: error, success: false})
+  }
+})
+
+
+///------- LIKES----------///
+app.post('/reviews/:id/like', authenticateUser, async (req, res) => {
+  const { id } = req.params
+  try {
+    const updateLike = await Review.findByIdAndUpdate(id, {$inc: {like: 1}})
+    if (updateLike) {
+      res.status(200).json({response: 'You have liked this review', success: true})
+    } else {
+      res.status(404).json({response: error, success: false})
+    }
+    
+  } catch (error) {
+    res.status(400).json({response: error, success: false})
+  }
+})
 
 
 //-------------------------START SERVER-------------------------//
