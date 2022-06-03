@@ -169,7 +169,7 @@ app.get('/profile/:id', async (req, res) => {
 
 //---------------------------SIGN UP ENDPOINT---------------------------//
 app.post('/signup', async (req, res) => {
-  const { username, password } = req.body
+  const { username, password, email } = req.body
 
   try {
     // salt -> randomizer
@@ -184,8 +184,10 @@ app.post('/signup', async (req, res) => {
       } else {
         const newUser = await new User({
           username,
+          email,
           password: bcrypt.hashSync(password, salt),
         }).save()
+
         res.status(201).json({
           response: {
             userId: newUser._id,
@@ -197,7 +199,7 @@ app.post('/signup', async (req, res) => {
       }
       } catch (error) {
         res.status(400).json({
-            message: 'Validation failed: provide username',
+            // message: error,
             response: error,
             success: false
         })
