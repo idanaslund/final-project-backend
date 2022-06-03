@@ -19,10 +19,13 @@ const UserSchema = new mongoose.Schema({
   username: {
     type: String,
     unique: true,
+    minlength: 3,
+    maxlength: 20,
     required: true,
   },
   password: {
     type: String,
+    minlength: 8,
     required: true,
   },
   accessToken: {
@@ -33,6 +36,32 @@ const UserSchema = new mongoose.Schema({
 
 const User = mongoose.model('User', UserSchema)
 
+
+const ReviewSchema = new mongoose.Schema({
+  review: {
+    type: String,
+    minlength: 5,
+    maxlength: 140,
+    required: true,
+    trim: true
+  },
+  likes: {
+    type: Number,
+    default: 0
+  },
+  author: {    /// Hur hämtar vi användarnamn automatiskt i inloggat läge?
+    type: String,
+    maxLength: 20,
+    required: true,
+    trim: true
+  },
+  createdAt: {
+    type: Date,
+    default: () => new Date()
+  },
+})
+
+const Reviews = mongoose.model('Reviews', ReviewSchema)
 
 // Defines the port the app will run on. Defaults to 8080, but can be overridden
 // when starting the server. Example command to overwrite PORT env variable value:
