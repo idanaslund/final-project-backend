@@ -14,6 +14,32 @@ mongoose.Promise = Promise
 
 
 // User model with validation rules: username, password and default accessToken with crypto library
+// const RestaurantSchema = new mongoose.Schema({
+//         id: String,
+//         name: String,
+//         image_URL:String,
+//         description: String,
+//         address: String,
+//         opening_hours_mon: String,
+//         opening_hours_tue: String,
+//         opening_hours_thur: String,
+//         opening_hours_wed: String,
+//         opening_hours_fri: String,
+//         opening_hours_sat: String,
+//         opening_hours_sun: String,
+//         meals: Array,
+//         budget: Array,
+//         type_of_food: Array,
+//         dogfriendly: Boolean,
+//         portion_size:Array,
+//         target_audience: Array,
+//         outdoor_area: Boolean,
+//         restaurant_focus: Array,
+//         website: String,
+// })
+
+// const Restaurant = mongoose.model('Restaurant', RestaurantSchema)
+
 
 const UserSchema = new mongoose.Schema({
   username: {
@@ -139,11 +165,44 @@ app.get("/", (req, res) => {
 
 //-------------------------GET ALL RESTAURANTS-------------------------//
 app.get('/restaurants', (req, res) => {
-  res.status(200).json({
-    data: restaurants,
-    success: true
-  })
+
+  try{
+    res.status(200).json({
+      data: restaurants,               ////Ska vi ändra till response?
+      success: true
+    })
+  } catch (error) {
+    res.status(400).json({ 
+      response: error, 
+      success: false })
+  }
+ 
 })
+
+/////// Funkar inte. localhost vill hitta _id. När jag lägger in _id i vår data står det (data not found). När det är "fel" format id står det:
+/////// "Cast to ObjectId failed for value \"res001\" (type string) at path \"_id\" for model \"Restaurant\""
+// app.get('/restaurants/id/:id', async (req, res) => {
+//   const { id } = req.params
+
+//   try{
+//     const restaurant = await Restaurant.findById(id)
+//     if(restaurant){
+//       res.status(200).json({
+//         data: restaurant,         ////Ska vi ändra till response?
+//         success: true
+//       })
+//     } else {
+//       res.status(404).json({ 
+//         response: 'No data found',
+//         success: false  
+//       })
+//     }    
+//   } catch (error) {
+//     res.status(400).json({ 
+//       response: error, 
+//       success: false })
+//   }
+// })
 
 
 //---------------------------PROFILE PROTECTED ENDPOINT---------------------------//
@@ -154,15 +213,20 @@ app.get('/profile/:id', async (req, res) => {
   try {
     const user = await User.findById(id)
     if (user) {
-      res.status(201).json({ email: user.email, 
+      res.status(201).json({ 
+        email: user.email, 
         fullName: user.fullName, 
         profileImage: user.profileImage, 
         password: user.password })
     } else {
-      res.status(404).json({ success: false, message: 'Could not find profile information' })
+      res.status(404).json({ 
+      message: 'Could not find profile information',
+      success: false  })
     }
   } catch (error) {
-    res.status(400).json({ message: 'Invalid request', error })
+    res.status(400).json({ 
+      message: error, 
+      success: false})
   }
 
 })
@@ -224,22 +288,22 @@ app.post('/login', async (req, res) => {
         success: true,
       })
     } else {
-      if (username === '') {
+      if (username === '') {                                //// Ska vi ha message, response, success? Eller ska response vara objektet som i de andra?
         res.status(404).json({
           message: 'Login failed: fill in username',
-          response: 'Login failed: fill in username',
+          response: error,
           success: false,
         })
       } else if (password === '') {
         res.status(404).json({
           message: 'Login failed: fill in password',
-          response: 'Login failed: fill in password',
+          response: error,
           success: false,
         })
       } else {
         res.status(404).json({
           message: 'Login failed: wrong username or password',
-          response: 'Login failed: wrong username or password',
+          response: error,
           success: false,
         })
       }
@@ -299,12 +363,18 @@ app.delete('/reviews/:id', authenticateUser, async (req, res) => {
   try {
     const deleted = await Review.findOneAndDelete({_id: id})
     if (deleted) {
-      res.status(200).json({response: deleted, success: true})
+      res.status(200).json({
+        response: deleted, 
+        success: true})
     } else {
-      res.status(404).json({response: 'Not found', success: false})
+      res.status(404).json({
+        response: 'Not found', 
+        success: false})
     }
   } catch (error) {
-    res.status(400).json({response: error, success: false})
+    res.status(400).json({
+      response: error, 
+      success: false})
   }
 })
 
@@ -315,14 +385,17 @@ app.get('/reviews', authenticateUser, async (req,res) => {
 
   try {
     const allReviews = await Review.find({}).sort({createdAt: 'desc'}).limit(20)
-  if (allReviews) {
+    if (allReviews) {
     res.status(200).json(allReviews)
-  } else {
-    res.status(404).json({response: error, success: false})
-  }
-   
+    } else {
+    res.status(404).json({
+      response: error, 
+      success: false})
+    }
   } catch (error) {
-    res.status(400).json({response: error, success: false})
+    res.status(400).json({
+      response: error, 
+      success: false})
   }
 })
 
@@ -333,13 +406,18 @@ app.post('/reviews/:id/like', authenticateUser, async (req, res) => {
   try {
     const updateLike = await Review.findByIdAndUpdate(id, {$inc: {like: 1}})
     if (updateLike) {
-      res.status(200).json({response: 'You have liked this review', success: true})
+      res.status(200).json({
+        response: 'You have liked this review', 
+        success: true})
     } else {
-      res.status(404).json({response: error, success: false})
+      res.status(404).json({
+        response: error, 
+        success: false})
     }
-    
   } catch (error) {
-    res.status(400).json({response: error, success: false})
+    res.status(400).json({
+      response: error, 
+      success: false})
   }
 })
 
