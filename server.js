@@ -15,7 +15,6 @@ mongoose.Promise = Promise
 
 // User model with validation rules: username, password and default accessToken with crypto library
 const RestaurantSchema = new mongoose.Schema({
-        _id: String,
         name: String,
         image_URL: String,
         description: String,
@@ -182,6 +181,30 @@ app.get('/restaurants', (req, res) => {
       success: false })
   }
  
+})
+
+// endpoint for name
+app.get('/restaurants/name/:name', async (req, res) => {
+  const { name } = req.body
+
+  try{
+    const restaurant = await Restaurant.findOne({ name })
+    if(restaurant){
+      res.status(200).json({
+        response: restaurant,     
+        success: true
+      })
+    } else {
+      res.status(404).json({ 
+        response: 'No data found',
+        success: false  
+      })
+    }    
+  } catch (error) {
+    res.status(400).json({ 
+      response: error, 
+      success: false })
+  }
 })
 
 // app.get('/restaurants/id/:id', authenticateUser)
