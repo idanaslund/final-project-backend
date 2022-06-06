@@ -258,6 +258,25 @@ app.get('/profile/:id', async (req, res) => {
 
 })
 
+//--------------------------- PROFILE SETTINGS ENDPOINT---------------------------//
+app.patch('/profile/:id', authenticateUser)
+app.get('/profile/:id', async (req, res) => {
+  const { id } = req.params
+
+  try {
+    const updateUser = await User.findByIdAndUpdate(id, req.body, { new: true})
+
+    if (updateUser) {
+      res.status(201).json({ success: true, updateUser })
+    } else {
+      res.status(404).json({ success: false, message: 'Not found' })
+    }
+  } catch (error) {
+    res.status(400).json({ message: 'Invalid request', error})
+  }
+})
+
+
 //---------------------------SIGN UP ENDPOINT---------------------------//
 app.post('/signup', async (req, res) => {
   const { username, password, email } = req.body
