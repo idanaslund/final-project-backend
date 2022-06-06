@@ -208,28 +208,28 @@ app.get('/restaurants/name/:name', async (req, res) => {
 })
 
 // app.get('/restaurants/id/:id', authenticateUser)
-app.get('/restaurants/id/:id', async (req, res) => {
-  const { id } = req.params
+// app.get('/restaurants/id/:id', async (req, res) => {
+//   const { id } = req.params
 
-  try{
-    const restaurant = await Restaurant.findById(id)
-    if(restaurant){
-      res.status(200).json({
-        response: restaurant,     
-        success: true
-      })
-    } else {
-      res.status(404).json({ 
-        response: 'No data found',
-        success: false  
-      })
-    }    
-  } catch (error) {
-    res.status(400).json({ 
-      response: error, 
-      success: false })
-  }
-})
+//   try{
+//     const restaurant = await Restaurant.findById(id)
+//     if(restaurant){
+//       res.status(200).json({
+//         response: restaurant,     
+//         success: true
+//       })
+//     } else {
+//       res.status(404).json({ 
+//         response: 'No data found',
+//         success: false  
+//       })
+//     }    
+//   } catch (error) {
+//     res.status(400).json({ 
+//       response: error, 
+//       success: false })
+//   }
+// })
 
 
 //---------------------------PROFILE PROTECTED ENDPOINT---------------------------//
