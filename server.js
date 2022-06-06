@@ -168,7 +168,7 @@ app.get("/", (req, res) => {
 
 
 //-------------------------GET ALL RESTAURANTS-------------------------//
-app.get('/restaurants', authenticateUser)
+// app.get('/restaurants', authenticateUser)
 app.get('/restaurants', (req, res) => {
 
   try{
@@ -184,7 +184,7 @@ app.get('/restaurants', (req, res) => {
  
 })
 
-app.get('/restaurants/id/:id', authenticateUser)
+// app.get('/restaurants/id/:id', authenticateUser)
 app.get('/restaurants/id/:id', async (req, res) => {
   const { id } = req.params
 
