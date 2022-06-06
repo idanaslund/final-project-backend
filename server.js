@@ -260,7 +260,7 @@ app.get('/profile/:id', async (req, res) => {
 
 //--------------------------- PROFILE SETTINGS ENDPOINT---------------------------//
 app.patch('/profile/:id', authenticateUser)
-app.get('/profile/:id', async (req, res) => {
+app.patch('/profile/:id', async (req, res) => {
   const { id } = req.params
 
   try {
