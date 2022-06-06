@@ -14,6 +14,36 @@ mongoose.Promise = Promise
 
 
 // User model with validation rules: username, password and default accessToken with crypto library
+const RestaurantSchema = new mongoose.Schema({
+        id: String,
+        name: String,
+        image_URL:String,
+        description: String,
+        address: String,
+        opening_hours_mon: String,
+        opening_hours_tue: String,
+        opening_hours_thur: String,
+        opening_hours_wed: String,
+        opening_hours_fri: String,
+        opening_hours_sat: String,
+        opening_hours_sun: String,
+        meals: Array,
+        budget: Array,
+        type_of_food: Array,
+        dogfriendly: Boolean,
+        portion_size:Array,
+        target_audience: Array,
+        outdoor_area: Boolean,
+        restaurant_focus: Array,
+        website: String,
+})
+
+const Restaurant = mongoose.model('Restaurant', RestaurantSchema)
+
+
+
+
+// User model with validation rules: username, password and default accessToken with crypto library
 
 const UserSchema = new mongoose.Schema({
   username: {
@@ -139,10 +169,43 @@ app.get("/", (req, res) => {
 
 //-------------------------GET ALL RESTAURANTS-------------------------//
 app.get('/restaurants', (req, res) => {
-  res.status(200).json({
-    data: restaurants,
-    success: true
-  })
+
+  try{
+    res.status(200).json({
+      response: restaurants,         
+      success: true
+    })
+  } catch (error) {
+    res.status(400).json({ 
+      response: error, 
+      success: false })
+  }
+ 
+})
+
+/////// Funkar inte. localhost vill hitta _id. När jag lägger in _id i vår data står det (data not found). När det är "fel" format id står det:
+/////// "Cast to ObjectId failed for value \"res001\" (type string) at path \"_id\" for model \"Restaurant\""
+app.get('/restaurants/id/:id', async (req, res) => {
+  const { id } = req.params
+
+  try{
+    const restaurant = await Restaurant.findById(id)
+    if(restaurant){
+      res.status(200).json({
+        response: restaurant,     
+        success: true
+      })
+    } else {
+      res.status(404).json({ 
+        response: 'No data found',
+        success: false  
+      })
+    }    
+  } catch (error) {
+    res.status(400).json({ 
+      response: error, 
+      success: false })
+  }
 })
 
 
