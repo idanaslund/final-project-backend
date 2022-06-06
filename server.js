@@ -185,10 +185,10 @@ app.get('/restaurants', (req, res) => {
 
 // endpoint for name
 app.get('/restaurants/name/:name', async (req, res) => {
-  const { name } = req.body
+  const { name } = req.params
 
   try{
-    const restaurant = await Restaurant.findOne({ name })
+    const restaurant = await Restaurant.findOne({ name: name })
     if(restaurant){
       res.status(200).json({
         response: restaurant,     
