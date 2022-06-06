@@ -16,6 +16,7 @@ Our idea is to create a web app for users to find fine dining restaurants in Sto
   For user to delete their own specific review: (method: delete) -----> '/reviews/:id'
   To see a list of all restaurant reviews: (method: get) '/reviews'
   To be able to like a specific review: (method: post) -----> '/reviews/:id/like'
+  To get information about a specific restaurant: (method: get) -----> '/reviews/id/:id'
 
 ## View it live
 

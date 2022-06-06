@@ -168,6 +168,7 @@ app.get("/", (req, res) => {
 
 
 //-------------------------GET ALL RESTAURANTS-------------------------//
+app.get('/restaurants', authenticateUser)
 app.get('/restaurants', (req, res) => {
 
   try{
@@ -183,8 +184,7 @@ app.get('/restaurants', (req, res) => {
  
 })
 
-/////// Funkar inte. localhost vill hitta _id. När jag lägger in _id i vår data står det (data not found). När det är "fel" format id står det:
-/////// "Cast to ObjectId failed for value \"res001\" (type string) at path \"_id\" for model \"Restaurant\""
+app.get('/restaurants/id/:id', authenticateUser)
 app.get('/restaurants/id/:id', async (req, res) => {
   const { id } = req.params
 
