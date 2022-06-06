@@ -1,6 +1,5 @@
 [
     {
-        "id": "res001",
         "name": "Adam/Albin",
         "image_URL":"https://i.postimg.cc/GhP02x7S/adam-albin.jpg",
         "description": "Internationally known chefs Adam Dahlberg and Albin Wessman transformed this space into something more modern and relaxed than a fine dining venue. The menu starts with a selection of elaborate snacks chosen by the chefs, followed by four dishes that change daily. The signature hand-cut beef tartare evolves with the season. It might be served with roasted almonds and white miso, or it might come as a lamb tartare. The cooking here is based firmly in Sweden’s gastronomic heritage, but you can also sense influences from French and other European kitchens.",
@@ -23,7 +22,6 @@
         "website":"https://adamalbin.se/en/"
     },
     {
-        "id": "res002",
         "name": "AG",
         "image_URL":"https://i.postimg.cc/0jTtxjJw/AG.jpg",
         "description": "A restaurant for everyone... but, to be really honest, mainly for meat lovers. If we do say so ourselves, AG serves Sweden's best porterhouse, club and ribeye steaks, all hand-selected and delivered by Scan. We use locally produced ingredients and the menu changes with the seasons: game in winter, lamb in spring, and so on.",
@@ -46,7 +44,6 @@
         "website":"https://restaurangag.se/"
     },
     {
-        "id": "res003",
         "name": "Agnes",
         "image_URL":"https://i.postimg.cc/y6n8qRcY/agnes-restaurant.jpg",
         "description": "A group of talented chefs and sommeliers unleashed restaurant Agnes on a slumbering backstreet in Kungsholmen. An open kitchen, a 10-seat chef’s table, and a long row of bar seats for diners contribute to the unusually intense and loud atmosphere. The menu is full of inspiring small and large dishes, many with Spanish influences. Pick suckling pig, enough for two or three people, with truffle aioli and pommes provençale, and pair it with something big and fruity from the exceptionally long list of magnum bottles.",
@@ -69,7 +66,6 @@
         "website":"http://restaurangagnes.com/"
     },
     {
-        "id": "res004",
         "name": "Agrikultur",
         "image_URL":"https://i.postimg.cc/bN1FmQGh/agrikultur.jpg",
         "description": "The set menu changes daily at this small restaurant helmed by 2014 Årets Kock Chef of the Year winner Filip Fastén and his partner Joel Åhlin. The plates and glasses are expertly filled with items the staff has shot, foraged, brewed, planted, raised, fermented, or handpicked. Everything is light and delicious.",
@@ -92,7 +88,6 @@
         "website":"https://www.agrikultur.se/"
     },
     {
-        "id": "res005",
         "name": "Aloë",
         "image_URL":"https://i.postimg.cc/50hy2dKB/aloe.jpg",
         "description": "Aloë has been a well-kept secret among foodies for years already, but finally got their Michelin star in 2018. Located in an old supermarket store in the suburb of Älvsjö – this isn’t your regular fine dining restaurant. Chefs Daniel Höglander and Niclas Jönsson cooks with local ingredients in a Nordic style, but are heavily influenced by Asian cuisine in their flavor profile.",
@@ -115,7 +110,6 @@
         "website":"https://www.aloerestaurant.se/"
     },
     {
-        "id": "res006",
         "name": "Babette",
         "image_URL":"https://i.postimg.cc/jqg3M50L/babette.jpg",
         "description": "Babette is a low-profile neighborhood restaurant that serves one of the best pizzas in town and a constantly changing list of addictive smaller dishes with just the right pinch of creativity. Come thirsty and explore the top-notch wine list.",
@@ -138,7 +132,6 @@
         "website":"http://babette.se/"
     },
     {
-        "id": "res007",
         "name": "Bleck",
         "image_URL":"https://i.postimg.cc/8zYjjL01/bleck-restaurant.jpg",
         "description": "Nice food and good vibes. Bleck opened up 2015......",
@@ -161,7 +154,6 @@
         "website":"https://restaurangbleck.se/"
     },
     {
-        "id": "res008",
         "name": "Bobergs Matsal",
         "image_URL":"https://i.postimg.cc/q7D699kX/bobergs-matsal.jpg",
         "description": "The posh dining room at upmarket department store Nordiska Kompaniet opened its doors in 1915. When acclaimed chef Björn Frantzén took over a couple of years ago, he completely replaced the menu and carefully restored the stunning interior. Enjoy baked Arctic char, steamed Norwegian skrei cod, or hand-peeled shrimp from the Swedish west coast while power-lunching with inner-city professionals. Conclude by ordering something sweet from the dessert trolley, like a Scandinavian pudding, along with a stiff avec (after-dinner drink). Then head out on a shopping rampage through the Swedish fashion brands section.",
@@ -184,7 +176,6 @@
         "website":"https://www.bobergsmatsal.se/"
     },
     {
-        "id": "res009",
         "name": "Boqueria",
         "image_URL":"https://i.postimg.cc/QMNzqT8S/boqueria.jpg",
         "description": "A vibrant, bustling tapas restaurant with high-level seating, located in a smart mall. Appealing menus offer a range of carefully prepared, authentic dishes with a vast selection of jamón ibérico de bellota, grilled meat and tapas. Sangria and pintxos can be enjoyed in their nearby bar.",
@@ -207,7 +198,6 @@
         "website":"https://www.boqueriastockholm.se/"
     },
     {
-        "id": "res010",
         "name": "Brasserie Astoria",
         "image_URL":"https://i.postimg.cc/s2ZGzChc/restaurant-brasserie.jpg",
         "description": "Brasserie Astoria on Nybrogatan is Michelin-starred chef Björn Frantzén’s latest Stockholm endeavor. Housed in a former cinema, Astoria is opts for a more relaxed dinner experience than the inventive kitchen wizardy at three starred Frantzén. You’ll be treated to classic dishes from the French and Italian culinary traditions – pasta carbonara, Moules frites and Cesar salad to name a few ­– served in a casual atmosphere.",
@@ -230,7 +220,6 @@
         "website":"http example"
     },
     {
-        "id": "res011",
         "name": "Broms",
         "image_URL":"https://i.postimg.cc/ZnLmt1GK/broms.jpg",
         "description": "At Broms you can have breakfast, lunch, dinner and even brunch on the weekends. You get the feeling of being in New York as you have your morning coffee. As a bonus you can bring your dog!",
@@ -253,7 +242,6 @@
         "website":"https://www.bromskarlaplan.se/sv/"
     },
     {
-        "id": "res012",
         "name": "Café Nizza",
         "image_URL":"https://i.postimg.cc/G2r9847r/cafe-nizza.jpg",
         "description": "The guys from restaurant Babette has opened up a neighborhood restaurant in the Södermalm district, focusing on Southern-European flavors and small-scale wine producers (read: lots of natural wines).",
@@ -276,7 +264,6 @@
         "website":"http://cafenizza.se/"
     },
     {
-        "id": "res013",
         "name": "Copine",
         "image_URL":"https://i.postimg.cc/dQCjmwXk/copine.jpg",
         "description": "Copine means girlfriend and this restaurant is the girlfriend of the popular Jim&Jacob. With focus on Mediterranian food Copine is perfect for group hangs or a relaxed date. ",
@@ -299,7 +286,6 @@
         "website":"https://www.jimjacobrestauranger.se/copine"
     },
     {
-        "id": "res014",
         "name": "Den Gyldene Freden",
         "image_URL":"https://i.postimg.cc/dtfKrmj1/den-gyldene-freden.jpg",
         "description": "This is one of the world’s oldest restaurants, operating at the same Old Town address since 1722. Quite recently, chef Filip Fastén from restaurant Agrikultur took over the ownership, which is reflected in the menu, still featuring classic dishes, but with increased focus on high-quality ingredients and smart presentations. For centuries, “Freden” has been the meeting place for famous authors, singers, and songwriters, and the original interior remains remarkably intact. Come for the atmosphere and traditional Swedish classics like pickled herring with Västerbotten cheese, cabbage and meat pie with caramelized whey, or the all-time-favorite dessert, hot rosehip soup with almond cake and ice cream.",
@@ -322,7 +308,6 @@
         "website":"https://gyldenefreden.se/"
     },
     {
-        "id": "res015",
         "name": "Ekstedt",
         "image_URL":"https://i.postimg.cc/s2Rq4nQV/ekstedt.jpg",
         "description": "An open fire is the focus at Michelin-starred Ekstedt, master purveyor of New Nordic cuisine, where everything is cooked without gas, electricity or microwaves. Ekstedt’s a haven for Scandi design fans too, with compact wooden tables, a rustic stone bar and exposed tungsten lights dangling from a mesh ceiling.",
@@ -345,7 +330,6 @@
         "website":"https://ekstedt.nu/"
     },
     {
-        "id": "res016",
         "name": "Falafelbaren",
         "image_URL":"https://i.postimg.cc/qRVdtpSc/falafelbaren.jpg",
         "description": "For the best falafels in town, head over to Södermalm and visit Falafelbaren on Hornsgatan near Mariatorget. This hole-in-the-wall shop won't let you down. Fresh ingredients, falafel balls fried to order, and tasty sauces. What more can you wish for in a good falafel?",
@@ -368,7 +352,6 @@
         "website":"http://www.falafelbaren.se/"
     },
     {
-        "id": "res017",
         "name": "Farang",
         "image_URL":"https://i.postimg.cc/4dPMSKT4/farang.jpg",
         "description": "At Farang, food is served in the Southeast Asian way. Share dishes make the meal into a social occasion where you and your party take pleasure in food and company as one harmonious experience. Good food and a pleasant atmosphere, a relaxing and nourishing whole, is our philosophy.",
@@ -391,7 +374,6 @@
         "website":"https://farang.se/"
     },
     {
-        "id": "res018",
         "name": "Fat Cat Brasserie",
         "image_URL":"https://i.postimg.cc/XXS3ZySs/pexels-lisa-fotios-776538.jpg",
         "description": "With a focus on small dishes, beautiful platings and a flavorful experience, Fat Cat is the perfect destination for an Asian-inspired, tasteful lunch or those nights you never want to end.",
@@ -414,7 +396,6 @@
         "website":"https://fatcatbrasserie.com/"
     },
     {
-        "id": "res019",
         "name": "Gastrologik",
         "image_URL":"https://i.postimg.cc/RZqtYhjS/gastrolik.jpg",
         "description": "Chefs and restaurant owners Jacob Holmström and Anton Bjuhr may have worked at L’Astrance and Pierre Gagnaire in Paris, respectively, but their cooking is firmly rooted in the Swedish soil. They spend most Mondays (when the restaurant is closed) getting their boots dirty at the biodynamic vegetable garden at Rosendal in the outskirts of Stockholm, where they source many of the vegetables for Gastrologik. The tasting menu is quite long, ever-changing, and seasonal. Expect beautifully plated dishes with both classic and unexpected combinations of tastes and textures.",
@@ -437,7 +418,6 @@
         "website":"https://gastrologik.se/"
     },
     {
-        "id": "res020",
         "name": "Greasy Spoon",
         "image_URL":"https://i.postimg.cc/g0yZ52Vr/greasy-spoon.jpg",
         "description": "Are you looking for a brunch spot? This is the place to go to get the real American brunch feeling.",
@@ -460,7 +440,6 @@
         "website":"http://www.greasyspoon.se/"
     },
     {
-        "id": "res021",
         "name": "Grus Grus",
         "image_URL":"https://i.postimg.cc/XY9Dqw2t/grus-grus.jpg",
         "description": "The wine list at Grus Grus is long, yet selective. It features small, European, non-intervention producers, with many wines available by the glass. Meanwhile, the open kitchen produces straightforward, delicious plates based on local and seasonal produce. Many dishes are influenced by Mediterranean cuisines, like grilled aubergine with labneh, sesame, and pomegranate; roasted marrow with onion, herbs, and grilled sourdough bread; endive with ajo blanco (white gazpacho), harissa, and almond; and cockles with lacto-fermented ramson (wild garlic). Above all, Grus Grus Wine Bar lives up to the ambition stated on its website: “We want you to feel at home!”",
@@ -483,7 +462,6 @@
         "website":"http://grusgrusvinbaren.se/en/home/"
     },
     {
-        "id": "res022",
         "name": "Hantverket",
         "image_URL":"https://i.postimg.cc/DzY9Jb11/pexels-elevate-1267320.jpg",
         "description": "Hantverket is a casual restaurant and bar that is open for lunch and dinner most days of the week. In the kitchen, you find chef Stefan Ekengren, formerly of restaurant Galleriet at Görvälns Slott. His legendary twist on Hasselback potatoes, deep-fried and served with vendace roe (löjrom) and sour cream, is worth the visit alone. Don’t miss the rosette cookies (struva) with duck liver, parmesan cheese, and port wine gel either.",
@@ -506,7 +484,6 @@
         "website":"https://restauranghantverket.se/"
     },
     {
-        "id": "res023",
         "name": "Häktet",
         "image_URL":"https://i.postimg.cc/dtCggbxg/h-ktet.jpg",
         "description": "There are just five main courses to choose from at Häktet, a trendy, ultra-modern restaurant inside a former 18th-century jail for petty criminals who couldn’t afford to pay their bail. Think classic European flavours with a contemporary twist, with a menu that typically changes several times a year to make the most of seasonal ingredients.",
@@ -529,7 +506,6 @@
         "website":"https://haktet.se/"
     },
     {
-        "id": "res024",
         "name": "Jacqueline's",
         "image_URL":"https://i.postimg.cc/KzFsSRxB/jaquelines.jpg",
         "description": "Jacqueline's have created the feeling of a living room and serve you breakfast, brunch, lunch and dinner. Don't miss out on their special Pinsa!",
@@ -552,7 +528,6 @@
         "website":"https://www.jacquelines.se/"
     },
     {
-        "id": "res025",
         "name": "La Ragazza",
         "image_URL":"https://i.postimg.cc/TwvvkNpG/la-ragazza.jpg",
         "description": "A sunny gastrofusion where we pair the luxurious and raw material-respecting cooking from the southern European tradition with our borderless, super-hedonistic, stateless and bombastic cooking. The seamless result of these two is a menu that consists of the finest ingredients that we can obtain from both soil, land and sea. The menu Sun to Table can be adapted to most people, but unfortunately we can not cook it vegetarian or without milk protein.",
@@ -575,7 +550,6 @@
         "website":"https://www.laragazza.se/?welcome=true"
     },
     {
-        "id": "res026",
         "name": "Las Brasas",
         "image_URL":"https://i.postimg.cc/bw3pMtPt/Las-Brasas.jpg",
         "description":"Are you craving tapas or some grilled beef, this is the place to go!",
@@ -598,7 +572,6 @@
         "website":"https://www.lasbrasas.se/"
     },
     {
-        "id": "res027",
         "name": "Lilla Ego",
         "image_URL":"https://i.postimg.cc/K8zB1bhH/lilla-ego.jpg",
         "description":"There's no tasting menu at Lilla Ego. Instead, the dishes are scrawled by hand on the white walls. Options could include pork tartare, matjes herring, raw scallops, algae-pickled ling, or fallow deer with Jerusalem artichokes. Since the two well-merited chefs, Tom Sjöstedt and Daniel Räms, opened this place, it’s been one of the city’s toughest reservations. The bare and rugged interior is almost too casual, making the space feel like someone’s living room.",
@@ -621,7 +594,6 @@
         "website":"http://www.lillaego.com/"
     },
     {
-        "id": "res028",
         "name": "Matbaren",
         "image_URL":"https://i.postimg.cc/VsVQpNSD/matbaren.jpg",
         "description":"Scattered among the counter seats, rustic sofas, and Windsor chairs at Matbaren is a dynamic mix of diners that includes international travelers, power-lunchers, savvy Instagrammers, and other locals, all hooked on the restaurant’s particular brand of Nordic comfort cuisine. Chef-owner Mathias Dahlgren, winner of the of the Bocuse d’Or in 1997, is behind the menu, which fuses Swedish culinary tradition with peak local produce. The funky interior by British designer Ilse Crawford and jaw-dropping views of the bay and the Royal Castle only add to the charm.",
@@ -644,7 +616,6 @@
         "website":"https://mdghs.se/en/matbaren/"
     },
     {
-        "id": "res029",
         "name": "Meatballs for the people",
         "image_URL":"https://i.postimg.cc/mrJB4YTr/meatballs-for-the-people.jpg",
         "description":"The most famous food in the Nordics is brought up-to-date at this edgy yet homey restaurant which has built its entire menu around the humble meatball. If this is your first Swedish meatballs experience (Ikea doesn’t count), go for the classic beef balls served with buttery mash, lingonberry jam and a creamy broth. More adventurous variations include rooster, reindeer and salmon. There are vegan and vegetarian options too.",
@@ -667,7 +638,6 @@
         "website":"http://meatball.se/"
     },
     {
-        "id": "res030",
         "name": "Omaka",
         "image_URL":"https://i.postimg.cc/pVwrzn58/omaka.jpg",
         "description":"Omaka is a brewery, restaurant, bar, and beer garden created by Sweden's youngest brewmaster Hedda Spendrup. The restaurant has an open kitchen concept, where head chef Christian Siberg has composed a menu with modern dishes to pair with every beer brewed in the building. The spacious bar has large windows overlooking the brewery. Omaka's slogan for their beer is 'Taste before style' – but with the new place, we'd say they've got both.",
@@ -690,7 +660,6 @@
         "website":"https://omaka.beer/"
     },
     {
-        "id": "res031",
         "name": "Operakällaren",
         "image_URL":"https://i.postimg.cc/sDhTHYR1/operakallaren.jpg",
         "description":"From the ornate 1895 interior and traditional trolleys delivering aperitifs and cheeses, you might think Operakällaren is stuck in the past. But take a closer look and you’ll recognize modern updates in the dining room like giant, free-standing, angled mirrors. Traditional French and Swedish dishes, such as fried pigeon with green pepper sauce or seared foie gras with almond cream, are bolstered by seasonal Nordic ingredients and leading gastronomic technique. At Operakällaren, you can travel back in time with flambé and silver-plated trolleys without sacrificing modern tastes.",
@@ -713,7 +682,6 @@
         "website":"https://www.operakallaren.se/en/restaurants/main-dining-room"
     },
     {
-        "id": "res032",
         "name": "PA&Co",
         "image_URL":"https://i.postimg.cc/L8SGzCZm/pa.jpg",
         "description":"For more than 30 years, this small restaurant has been a home away from home for celebrities, wannabes, and regulars. Service is effusively friendly, and the vibe beneath the chandeliers is always relaxed. No-fuss Swedish comfort dishes boast the occasional French or Spanish tweak, like råraka (hash browns with red onion, sour cream, and vendace roe), a chevre chaud salad with Dijon dressing, and the Gino, a signature dessert of strawberries, kiwi, and banana covered by grated white chocolate and served with vanilla ice cream. ",
@@ -736,7 +704,6 @@
         "website":"http://paco.se/"
     },
     {
-        "id": "res033",
         "name": "Piren",
         "image_URL":"https://i.postimg.cc/ZqnNc76n/piren.jpg",
         "description":"Summer evenings or sparkling winter days, Piren is open all year, every day of the week. Come enjoy our delicious food, amazing drinks and a fantastic view!",
@@ -759,7 +726,6 @@
         "website":"https://piren-bar.se/"
     },
     {
-        "id": "res034",
         "name": "Portal Restaruant",
         "image_URL":"https://i.postimg.cc/3w3MXt9V/portal-restaurant.jpg",
         "description":"Opened in 2015, Portal is already an institution. Chef Klas Lindberg has an impressive resume that includes being named Swedish Chef of the Year by Årets Kock in 2012 and a lengthy stint at restaurant L’Astrance in Paris. At Portal, he provides Stockholmers with popular dinners beneath huge windows. Consult the blackboard for various cuts of dry-aged beef, which are served with house fries and bearnaise butter. Or go for locally sourced vegetables, seafood, and daily rotating game meats. Chase it all down with artisan Swedish beer or a bottle from the well-curated cellar. Since 2018, guests have been able to pop next door to busy Bar Portal, which serves delicious small plates with a longer list of wines by the glass.",
@@ -782,7 +748,6 @@
         "website":"https://portalrestaurant.se/en/"
     },
     {
-        "id": "res035",
         "name": "Punk Royale",
         "image_URL":"https://i.postimg.cc/Rh7xBjnb/punk-royal.jpg",
         "description":"The tasting menu here comprises a selection of decadent, globally-inspired small plates. It all begins with a scoop of caviar dolloped straight onto your hand, alongside a shot of vodka. The interior couldn’t be more opposed to fine dining; the walls are crumbling, there’s a smoke machine filling the room with a nostalgic mist and Lego to play with in between courses.",
@@ -805,7 +770,6 @@
         "website":"https://punkroyale.se/hem-eng"
     },
     {
-        "id": "res036",
         "name": "Rolfs kök",
         "image_URL":"https://i.postimg.cc/nr5fZ6Tb/RolfsK-k.jpg",
         "description":"Rolfs kök focuses on classic swedish 'husmanskost' with that extra touch. The restaurant is small and loud and is perfect for a night out with friends.",
@@ -828,7 +792,6 @@
         "website":"https://rolfskok.se/"
     },
     {
-        "id": "res037",
         "name": "Rutabaga",
         "image_URL":"https://i.postimg.cc/J0kfDHmx/rutabaga.jpg",
         "description":"In an attempt to balance out the innumerable hamburger spots that have opened across Stockholm in the last decade, chef Mathias Dahlgren made a bold move. He closed his posh, two-Michelin-starred restaurant Matsalen and opened a new, just slightly more relaxed venture with a strictly vegetarian philosophy. His aim is to create the lacto-ovo-vegetarian menu of the future, based on fresh produce from both near and far, a unique approach in the locavore-dominated Nordic food scene.",
@@ -851,7 +814,6 @@
         "website":"https://mdghs.se/en/rutabaga/"
     },
     {
-        "id": "res038",
         "name": "Sin Ramen",
         "image_URL":"https://i.postimg.cc/X7tvYbJr/sin-ramen-restaurant.jpg",
         "description":"Welcome to Sin Ramen - the restaurant inspired by underground Tokyo. Here, the frame is served from scratch - the broth, the noodles and all the ingredients: carefully selected to together create a perfect taste experience.",
@@ -874,7 +836,6 @@
         "website":"https://www.sinramen.se/"
     },
     {
-        "id": "res039",
         "name": "Smak",
         "image_URL":"https://i.postimg.cc/SxCrSkZr/smak.jpg",
         "description":"Choose what, and how many, flavours you want and get them served as small portions. No starters or mains exist here. ",
@@ -897,7 +858,6 @@
         "website":"https://smakstockholm.se/"
     },
     {
-        "id": "res040",
         "name": "Spritmuseum",
         "image_URL":"https://i.postimg.cc/zDxwzJNY/Spritmuseum.jpg",
         "description":"After starting up as a chef in southern Sweden, Petter Nilsson ran a restaurant in Uzès in Provence before taking over La Gazzetta, one of the most influential restaurants in the Parisian neo-bistro trend. As head chef at Spritmuseum, Nilsson combines local ingredients with food traditions and techniques from France, the Mediterranean, and the Nordic countries. Dishes might include ravioli with raw shrimp and verbena consommé; Swedish squid with turnip and grilled lemon; heirloom pies with chestnuts, winter truffle, parsley, and cauliflower; or smoked and grilled salsify with funnel chanterelle and spinach.",
@@ -920,7 +880,6 @@
         "website":"https://spritmuseum.se/en/restaurant/"
     },
     {
-        "id": "res041",
         "name": "Stockholm Fist",
         "image_URL":"https://i.postimg.cc/hjt53sw-V/viviana-rishe-zf8t-A3-L5w-Bc-unsplash.jpg",
         "description":"Stockholm Fisk is a stylish modern hotel restaurant specializing in seafood with dishes that can be shared.",
@@ -943,7 +902,6 @@
         "website":"https://www.stockholmfisk.se/"
     },
     {
-        "id": "res042",
         "name": "Sushi Sho",
         "image_URL":"https://i.postimg.cc/kXJxKWXk/sushi-sho.jpg",
         "description":"The first Asian restaurant in Sweden to get a Michelin star, this intimate sushi bar’s head chef, Carl Ishizaki, spent two decades perfecting his inventive takes on some of Japan’s most classic recipes before investing in his own tiny 20-seat venue. Here customers experience 15 of his signature dishes in one sitting via a seasonal tasting menu, scribbled on a giant chalkboard, in a relaxed, friendly atmosphere.",
@@ -966,7 +924,6 @@
         "website":"https://www.sushisho.se/"
     },
     {
-        "id": "res043",
         "name": "Taverna Brillo",
         "image_URL":"https://i.postimg.cc/rpm3pCWx/taverna-brillo.jpg",
         "description":"The pizzas are the stars of this savoury menu, piled high with fresh ingredients that change with the seasons, but there’s a wide range of pasta, meat and fish dishes too. There are extensive breakfast and lunch menus, as well as a separate gelateria and a top-notch bakery-cum-coffee shop by the entrance – not to mention the graffiti-scrawled cocktail bar, Växthusen, at the back. There are set menus to share in the evening, which make the high-end experience more affordable.",
@@ -989,7 +946,6 @@
         "website":"https://tavernabrillo.se/?lang=en"
     },
     {
-        "id": "res044",
         "name": "Teatergrillen",
         "image_URL":"https://i.postimg.cc/66g85R4r/teaterngrillen.jpg",
         "description":"Opened in 1945 (its gorgeous theater-themed interior debuted in 1968), Teatergrillen is an important piece of Stockholm restaurant history, but it remains a very popular, upscale oasis for local professionals. The kitchen delivers well-executed, classic, and much-loved dishes like blini with Kalix vendace roe, biff rydberg (deliciously pan-fried diced beef tenderloin, potatoes, and onion served with raw egg yolk on top), and riche gala (hazelnut cookies layered with vanilla ice cream and chocolate sauce). Before and after dinner, stop by Teaterbaren up front for a mixology experience created by some of the best bartenders in town.",
@@ -1012,7 +968,6 @@
         "website":"https://teatergrillen.se/eng/"
     },
     {
-        "id": "res045",
         "name": "Tennstopet",
         "image_URL":"https://i.postimg.cc/br3w19C8/tennstopet.jpg",
         "description":"Leave your coat with the distinguished old man at the door and enter this piece of restaurant history. Having served hungry and thirsty customers for more than a century (though initially at a different location), Tennstopet is still going very strong. Order the SOS (herring, cheese, butter) and add cured salmon with dill-creamed potatoes, potato pancakes with vendace roe, and steamed cod with poached egg to complete your meal. Chase with lager and aquavit.",
@@ -1035,7 +990,6 @@
         "website":"https://www.tennstopet.se/"
     },
     {
-        "id": "res046",
         "name": "The Burgundy",
         "image_URL":"https://i.postimg.cc/h4CdTphk/Burgundy.jpg",
         "description":"With the motto 'Wine for all!' The Burgundy collects all the good parts from the sister restaurants and makes sure you get the best wine from the biggest wine cellar in Stockholm.",
@@ -1058,7 +1012,6 @@
         "website":"https://www.theburgundy.se/?welcome=true"
     },
     {
-        "id": "res047",
         "name": "Trattoria Villa Romana",
         "image_URL":"https://i.postimg.cc/jdp4mtP6/Villa-Romana.jpg",
         "description":"Trattoria Villa Romana is an Italian restaurant located centrally on Kungsbroplan with a beautiful view of the river. We work with ingredients and dishes inspired by Italian cuisine. Here you are greeted by a cozy atmosphere, happy chefs and waiters / waitresses with a twinkle in their eye. Here we make all pasta from scratch!",
@@ -1081,7 +1034,6 @@
         "website":"https://trattoriavillaromana.se/"
     },
     {
-        "id": "res048",
         "name": "Tyge & Sessil",
         "image_URL":"https://i.postimg.cc/m2cTX2j8/tyge-sessil.jpg",
         "description":"Tyge & Sessil is a natural wine bar and casual eatery by star chef Niklas Ekstedt. Situated on Brahegatan, close to Stureplan, this is one of the best places in Stockholm for wines from small-scale and independent producers from lesser-known regions. Expect lots of cloudy, glou glou juice!",
@@ -1104,7 +1056,6 @@
         "website":"https://tygesessil.se/"
     },
     {
-        "id": "res049",
         "name": "Un Poco",
         "image_URL":"https://i.postimg.cc/tJnTW0rD/UnPoco.jpg",
         "description":"A rustic, Italian restaurant with affordable tasting menus. And don't miss out on Un poco bar menu!",
@@ -1127,7 +1078,6 @@
         "website":"https://unpoco.se/"
     },
     {
-        "id": "res050",
         "name": "Woodstockholm",
         "image_URL":"https://i.postimg.cc/9XKp9Jnz/woodstockholm.jpg",
         "description":"You find Woodstockholm on Mosebacke Torg. The menu depends on the theme of the month and is therefore always changing. As something extra the resaurant also work as a furniture store.",
