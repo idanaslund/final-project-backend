@@ -9,7 +9,8 @@ Our idea is to create a web app for users to find fine dining restaurants in Sto
   To get a list of all the restaurants (method: get) -----> '/restaurants'
 
 - For users that are logged in:
-  To reach the user profile: (method: get) -----> '/profile/:id
+  To reach the user profile: (method: get) -----> '/profile/:id'
+  To update user data: (method: patch) -----> '/profile/:id'
   To sign up an account: (method: post) -----> '/signup'
   To login: (method: post) -----> '/login'
   Give review on a specific restaurant: (method: post) -----> '/review/:id'

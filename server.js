@@ -182,16 +182,14 @@ app.get('/restaurants', (req, res) => {
   }
  
 })
-
-
 //----------------------GET A SPECIFIC RESTAURANT--------------------//
 
-// app.get('/restaurants/id/:id', authenticateUser)
-app.get('/restaurants/id/:id', async (req, res) => {
-  const { id } = req.params
+// endpoint for name
+app.get('/restaurants/name/:name', async (req, res) => {
+  const { name } = req.params
 
   try{
-    const restaurant = await Restaurant.findById(id)
+    const restaurant = await Restaurant.findOne({ name: name })
     if(restaurant){
       res.status(200).json({
         response: restaurant,     
@@ -209,6 +207,30 @@ app.get('/restaurants/id/:id', async (req, res) => {
       success: false })
   }
 })
+
+// app.get('/restaurants/id/:id', authenticateUser)
+// app.get('/restaurants/id/:id', async (req, res) => {
+//   const { id } = req.params
+
+//   try{
+//     const restaurant = await Restaurant.findById(id)
+//     if(restaurant){
+//       res.status(200).json({
+//         response: restaurant,     
+//         success: true
+//       })
+//     } else {
+//       res.status(404).json({ 
+//         response: 'No data found',
+//         success: false  
+//       })
+//     }    
+//   } catch (error) {
+//     res.status(400).json({ 
+//       response: error, 
+//       success: false })
+//   }
+// })
 
 
 //---------------------------PROFILE PROTECTED ENDPOINT---------------------------//
@@ -235,6 +257,24 @@ app.get('/profile/:id', async (req, res) => {
       success: false})
   }
 
+})
+
+//--------------------------- PROFILE SETTINGS ENDPOINT---------------------------//
+app.patch('/profile/:id', authenticateUser)
+app.patch('/profile/:id', async (req, res) => {
+  const { id } = req.params
+
+  try {
+    const updateUser = await User.findByIdAndUpdate(id, req.body, { new: true})
+
+    if (updateUser) {
+      res.status(201).json({ success: true, updateUser })
+    } else {
+      res.status(404).json({ success: false, message: 'Not found' })
+    }
+  } catch (error) {
+    res.status(400).json({ message: 'Invalid request', error})
+  }
 })
 
 //---------------------------SIGN UP ENDPOINT---------------------------//
