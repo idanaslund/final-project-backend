@@ -182,6 +182,7 @@ app.get('/restaurants', (req, res) => {
   }
  
 })
+//----------------------GET A SPECIFIC RESTAURANT--------------------//
 
 // endpoint for name
 app.get('/restaurants/name/:name', async (req, res) => {
@@ -260,7 +261,7 @@ app.get('/profile/:id', async (req, res) => {
 
 //--------------------------- PROFILE SETTINGS ENDPOINT---------------------------//
 app.patch('/profile/:id', authenticateUser)
-app.get('/profile/:id', async (req, res) => {
+app.patch('/profile/:id', async (req, res) => {
   const { id } = req.params
 
   try {
@@ -275,7 +276,6 @@ app.get('/profile/:id', async (req, res) => {
     res.status(400).json({ message: 'Invalid request', error})
   }
 })
-
 
 //---------------------------SIGN UP ENDPOINT---------------------------//
 app.post('/signup', async (req, res) => {
