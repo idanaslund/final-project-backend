@@ -182,6 +182,7 @@ app.get('/restaurants', (req, res) => {
   }
  
 })
+//----------------------GET A SPECIFIC RESTAURANT--------------------//
 
 // endpoint for name
 app.get('/restaurants/name/:name', async (req, res) => {
