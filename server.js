@@ -138,24 +138,15 @@ app.use((req, res, next) => {
 const authenticateUser = async (req, res, next) => {
   try {
     const user = await User.findOne({
-      accessToken: req.header('Authorization'),
-    })
+      accessToken: req.header('Authorization')})
     if (user) {
       req.user = user
       next()
     } else {
-      res.status(401).json({
-        message: 'Please, log in',
-        response: 'Please, log in',
-        success: false,
-      })
+      res.status(401).json({ response: 'Please, log in', success: false })
     }
   } catch (error) {
-    res.status(400).json({
-      message: 'Error, could not authenticate user',
-      response: error,
-      success: false,
-    })
+    res.status(400).json({ response: 'Invalid request', error })
   }
 }
 
@@ -189,7 +180,31 @@ app.get('/restaurants/name/:name', async (req, res) => {
   const { name } = req.params
 
   try{
-    const restaurant = await Restaurant.findOne({ name: name })
+    const restaurantName = await Restaurant.findOne({ name: name })
+    if(restaurantName){
+      res.status(200).json({
+        response: restaurantName,     
+        success: true
+      })
+    } else {
+      res.status(404).json({ 
+        response: 'No data found',
+        success: false  
+      })
+    }    
+  } catch (error) {
+    res.status(400).json({ 
+      response: error, 
+      success: false })
+  }
+})
+
+// app.get('/restaurants/id/:id', authenticateUser)
+app.get('/restaurants/id/:id', async (req, res) => {
+  const { id } = req.params
+
+  try{
+    const restaurant = await Restaurant.findById({ id: id })
     if(restaurant){
       res.status(200).json({
         response: restaurant,     
@@ -207,30 +222,6 @@ app.get('/restaurants/name/:name', async (req, res) => {
       success: false })
   }
 })
-
-// app.get('/restaurants/id/:id', authenticateUser)
-// app.get('/restaurants/id/:id', async (req, res) => {
-//   const { id } = req.params
-
-//   try{
-//     const restaurant = await Restaurant.findById(id)
-//     if(restaurant){
-//       res.status(200).json({
-//         response: restaurant,     
-//         success: true
-//       })
-//     } else {
-//       res.status(404).json({ 
-//         response: 'No data found',
-//         success: false  
-//       })
-//     }    
-//   } catch (error) {
-//     res.status(400).json({ 
-//       response: error, 
-//       success: false })
-//   }
-// })
 
 
 //---------------------------PROFILE PROTECTED ENDPOINT---------------------------//
