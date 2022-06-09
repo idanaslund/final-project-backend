@@ -205,7 +205,7 @@ app.get('/restaurants/id/:id', async (req, res) => {
   const { id } = req.params
 
   try{
-    const restaurant = await Restaurant.findById({ id: id })
+    const restaurant = await Restaurant.findOne({ id: id })
     if(restaurant){
       res.status(200).json({
         response: restaurant,     
