@@ -15,6 +15,7 @@ mongoose.Promise = Promise
 
 // User model with validation rules: username, password and default accessToken with crypto library
 const RestaurantSchema = new mongoose.Schema({
+        id: String,
         name: String,
         image_URL: String,
         description: String,
