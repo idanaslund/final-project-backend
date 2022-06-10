@@ -200,8 +200,8 @@ app.get('/restaurants/name/:name', async (req, res) => {
   }
 })
 
-// app.get('/restaurants/id/:id', authenticateUser)
-app.get('/restaurants/id/:id', async (req, res) => {
+// app.get('/restaurants/:id', authenticateUser)
+app.get('/restaurants/:id', async (req, res) => {
   const { id } = req.params
 
   try{
@@ -257,6 +257,7 @@ app.patch('/profile/:id', async (req, res) => {
   const { id } = req.params
 
   try {
+    console.log('req', req.body)
     const updateUser = await User.findByIdAndUpdate(id, req.body, { new: true})
 
     if (updateUser) {
