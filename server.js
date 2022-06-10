@@ -201,7 +201,7 @@ app.get('/restaurants/name/:name', async (req, res) => {
 })
 
 // app.get('/restaurants/id/:id', authenticateUser)
-app.get('/restaurants/id/:id', async (req, res) => {
+app.get('/restaurants/:id', async (req, res) => {
   const { id } = req.params
 
   try{
@@ -364,7 +364,7 @@ app.post('/reviews', authenticateUser, async (req, res) => {
   try {
     const newReview = await new Review({
       review: review,
-      user: _id
+      userId: _id
     }).save()
 
     if(newReview){
