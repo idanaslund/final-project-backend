@@ -294,6 +294,7 @@ app.post('/signup', async (req, res) => {
         res.status(201).json({
           response: {
             userId: newUser._id,
+            email: newUser.email,
             username: newUser.username,
             accessToken: newUser.accessToken
           },
