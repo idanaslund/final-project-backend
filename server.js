@@ -261,7 +261,8 @@ app.patch('/profile/:id', async (req, res) => {
     const updateUser = await User.findByIdAndUpdate(id, req.body, { new: true})
 
     if (updateUser) {
-      res.status(201).json({ success: true, updateUser })
+      console.log(updateUser)
+      res.status(200).json({ success: true, updateUser })
     } else {
       res.status(404).json({ success: false, message: 'Not found' })
     }
