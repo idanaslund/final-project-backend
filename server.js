@@ -68,18 +68,22 @@ const UserSchema = new mongoose.Schema({
     minlength: 8,
     required: true
   },
-  profileImage: {
-    name: String,
-    imageURL: String
+  accessToken: {
+    type: String,
+    default: () => crypto.randomBytes(128).toString('hex')
   },
   fullName: {
     type: String,
     unique: false
   },
-  accessToken: {
-    type: String,
-    default: () => crypto.randomBytes(128).toString('hex')
+  phone: {
+    type: Number,
+    unique: false
   },
+  bio: {
+    type: String,
+    unique: false
+  }
 })
 
 const User = mongoose.model('User', UserSchema)
@@ -259,17 +263,15 @@ app.patch('/profile/:id', async (req, res) => {
   const { id } = req.params
 
   try {
-    console.log('req', req.body)
     const updateUser = await User.findByIdAndUpdate(id, req.body, { new: true})
 
     if (updateUser) {
-      console.log(updateUser)
-      res.status(200).json({ success: true, updateUser })
+      res.status(200).json({ success: true, response: updateUser })
     } else {
-      res.status(404).json({ success: false, message: 'Not found' })
+      res.status(404).json({ success: false, response: 'Not found' })
     }
   } catch (error) {
-    res.status(400).json({ message: 'Invalid request', error})
+    res.status(400).json({ response: 'Invalid request', error})
   }
 })
 
