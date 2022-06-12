@@ -200,8 +200,8 @@ app.get('/restaurants/name/:name', async (req, res) => {
   }
 })
 
-// app.get('/restaurants/id/:id', authenticateUser)
-app.get('/restaurants/id/:id', async (req, res) => {
+// app.get('/restaurants/:id', authenticateUser)
+app.get('/restaurants/:id', async (req, res) => {
   const { id } = req.params
 
   try{
@@ -257,10 +257,12 @@ app.patch('/profile/:id', async (req, res) => {
   const { id } = req.params
 
   try {
+    console.log('req', req.body)
     const updateUser = await User.findByIdAndUpdate(id, req.body, { new: true})
 
     if (updateUser) {
-      res.status(201).json({ success: true, updateUser })
+      console.log(updateUser)
+      res.status(200).json({ success: true, updateUser })
     } else {
       res.status(404).json({ success: false, message: 'Not found' })
     }
@@ -293,6 +295,7 @@ app.post('/signup', async (req, res) => {
         res.status(201).json({
           response: {
             userId: newUser._id,
+            email: newUser.email,
             username: newUser.username,
             accessToken: newUser.accessToken
           },
