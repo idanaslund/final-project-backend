@@ -203,7 +203,7 @@ app.get('/restaurants/name/:name', async (req, res) => {
 
 
 // app.get('/restaurants/:id', authenticateUser)
-app.get('/restaurants/:id', async (req, res) => {
+app.get('/restaurants/:id', authenticateUser, async (req, res) => {
   const { id } = req.params
 
   try{
