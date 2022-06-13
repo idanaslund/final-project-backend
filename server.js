@@ -68,22 +68,18 @@ const UserSchema = new mongoose.Schema({
     minlength: 8,
     required: true
   },
-  accessToken: {
-    type: String,
-    default: () => crypto.randomBytes(128).toString('hex')
+  profileImage: {
+    name: String,
+    imageURL: String
   },
   fullName: {
     type: String,
     unique: false
   },
-  phone: {
-    type: Number,
-    unique: false
-  },
-  bio: {
+  accessToken: {
     type: String,
-    unique: false
-  }
+    default: () => crypto.randomBytes(128).toString('hex')
+  },
 })
 
 const User = mongoose.model('User', UserSchema)
@@ -243,10 +239,7 @@ app.get('/profile/:id', async (req, res) => {
         email: user.email, 
         fullName: user.fullName, 
         profileImage: user.profileImage, 
-        password: user.password,
-        fullName: user.fullName,
-        phone: user.phone,
-        bio: user.bio})
+        password: user.password })
     } else {
       res.status(404).json({ 
       message: 'Could not find profile information',
@@ -266,15 +259,17 @@ app.patch('/profile/:id', async (req, res) => {
   const { id } = req.params
 
   try {
+    console.log('req', req.body)
     const updateUser = await User.findByIdAndUpdate(id, req.body, { new: true})
 
     if (updateUser) {
-      res.status(200).json({ success: true, response: updateUser })
+      console.log(updateUser)
+      res.status(200).json({ success: true, updateUser })
     } else {
-      res.status(404).json({ success: false, response: 'Not found' })
+      res.status(404).json({ success: false, message: 'Not found' })
     }
   } catch (error) {
-    res.status(400).json({ response: 'Invalid request', error})
+    res.status(400).json({ message: 'Invalid request', error})
   }
 })
 
@@ -304,10 +299,7 @@ app.post('/signup', async (req, res) => {
             userId: newUser._id,
             email: newUser.email,
             username: newUser.username,
-            accessToken: newUser.accessToken,
-            fullName: newUser.fullName,
-            phone: newUser.phone,
-            bio: newUser.bio
+            accessToken: newUser.accessToken
           },
           success: true,
         })
@@ -335,9 +327,6 @@ app.post('/login', async (req, res) => {
           userId: user._id,
           username: user.username,
           accessToken: user.accessToken,
-          fullName: user.fullName,
-          phone: user.phone,
-          bio: user.bio
         },
         success: true,
       })
