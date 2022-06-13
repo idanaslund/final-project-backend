@@ -243,7 +243,10 @@ app.get('/profile/:id', async (req, res) => {
         email: user.email, 
         fullName: user.fullName, 
         profileImage: user.profileImage, 
-        password: user.password })
+        password: user.password,
+        fullName: user.fullName,
+        phone: user.phone,
+        bio: user.bio})
     } else {
       res.status(404).json({ 
       message: 'Could not find profile information',
@@ -301,7 +304,10 @@ app.post('/signup', async (req, res) => {
             userId: newUser._id,
             email: newUser.email,
             username: newUser.username,
-            accessToken: newUser.accessToken
+            accessToken: newUser.accessToken,
+            fullName: newUser.fullName,
+            phone: newUser.phone,
+            bio: newUser.bio
           },
           success: true,
         })
@@ -329,6 +335,9 @@ app.post('/login', async (req, res) => {
           userId: user._id,
           username: user.username,
           accessToken: user.accessToken,
+          fullName: user.fullName,
+          phone: user.phone,
+          bio: user.bio
         },
         success: true,
       })
