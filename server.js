@@ -363,7 +363,7 @@ app.post('/login', async (req, res) => {
 
 //------- POST REVIEW -------//
 app.post('/reviews', authenticateUser, async (req, res) => {
-  const { _id } = req.user
+  const { _id } = req.user._id
   const { review } = req.body
 
   try {
