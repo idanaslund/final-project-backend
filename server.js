@@ -68,18 +68,22 @@ const UserSchema = new mongoose.Schema({
     minlength: 8,
     required: true
   },
-  profileImage: {
-    name: String,
-    imageURL: String
+  accessToken: {
+    type: String,
+    default: () => crypto.randomBytes(128).toString('hex')
   },
   fullName: {
     type: String,
     unique: false
   },
-  accessToken: {
-    type: String,
-    default: () => crypto.randomBytes(128).toString('hex')
+  phone: {
+    type: Number,
+    unique: false
   },
+  bio: {
+    type: String,
+    unique: false
+  }
 })
 
 const User = mongoose.model('User', UserSchema)
@@ -239,7 +243,10 @@ app.get('/profile/:id', async (req, res) => {
         email: user.email, 
         fullName: user.fullName, 
         profileImage: user.profileImage, 
-        password: user.password })
+        password: user.password,
+        fullName: user.fullName,
+        phone: user.phone,
+        bio: user.bio})
     } else {
       res.status(404).json({ 
       message: 'Could not find profile information',
@@ -253,23 +260,22 @@ app.get('/profile/:id', async (req, res) => {
 
 })
 
+
 //--------------------------- PROFILE SETTINGS ENDPOINT---------------------------//
 app.patch('/profile/:id', authenticateUser)
 app.patch('/profile/:id', async (req, res) => {
   const { id } = req.params
 
   try {
-    console.log('req', req.body)
     const updateUser = await User.findByIdAndUpdate(id, req.body, { new: true})
 
     if (updateUser) {
-      console.log(updateUser)
-      res.status(200).json({ success: true, updateUser })
+      res.status(200).json({ success: true, response: updateUser })
     } else {
-      res.status(404).json({ success: false, message: 'Not found' })
+      res.status(404).json({ success: false, response: 'Not found' })
     }
   } catch (error) {
-    res.status(400).json({ message: 'Invalid request', error})
+    res.status(400).json({ response: 'Invalid request', error})
   }
 })
 
@@ -299,7 +305,10 @@ app.post('/signup', async (req, res) => {
             userId: newUser._id,
             email: newUser.email,
             username: newUser.username,
-            accessToken: newUser.accessToken
+            accessToken: newUser.accessToken,
+            fullName: newUser.fullName,
+            phone: newUser.phone,
+            bio: newUser.bio
           },
           success: true,
         })
@@ -312,6 +321,7 @@ app.post('/signup', async (req, res) => {
         })
       }
 })
+
 
 
 //---------------------------LOGIN ENDPOINT---------------------------//
@@ -327,6 +337,9 @@ app.post('/login', async (req, res) => {
           userId: user._id,
           username: user.username,
           accessToken: user.accessToken,
+          fullName: user.fullName,
+          phone: user.phone,
+          bio: user.bio
         },
         success: true,
       })
@@ -362,8 +375,37 @@ app.post('/login', async (req, res) => {
 
 
 //------- POST REVIEW -------//
+//V2
+// app.post('/reviews', authenticateUser, async (req, res) => {
+
+//   try {
+
+//     const { userId } = req.user._id
+//     const { review } = req.body
+
+//     console.log(`This is the req.user._id ${req.user._id}`)
+
+//     const newReview = await new Review({
+//       review: review,
+//       userId,
+//     }).save()
+
+//     console.log(newReview)
+
+//     res.status(201).json({ response: newReview, success: true })
+    
+//   } catch (error) {
+//     res.status(400).json({ 
+//       response: error, 
+//       success: false 
+//     })
+//   }
+// })
+
+
+//V1
 app.post('/reviews', authenticateUser, async (req, res) => {
-  const { _id } = req.user
+  const { _id } = req.user._id
   const { review } = req.body
 
   try {
