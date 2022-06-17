@@ -163,7 +163,7 @@ app.get("/", (req, res) => {
 
 
 //-------------------------GET ALL RESTAURANTS-------------------------//
-// app.get('/restaurants', authenticateUser)
+app.get('/restaurants', authenticateUser)
 app.get('/restaurants', (req, res) => {
 
   try{
@@ -181,33 +181,32 @@ app.get('/restaurants', (req, res) => {
 //----------------------GET A SPECIFIC RESTAURANT--------------------//
 
 // endpoint for name
-app.get('/restaurants/name/:name', async (req, res) => {
-  const { name } = req.params
+// app.get('/restaurants/name/:name', async (req, res) => {
+//   const { name } = req.params
 
-  try{
-    const restaurantName = await Restaurant.findOne({ name: name })
-    if(restaurantName){
-      res.status(200).json({
-        response: restaurantName,     
-        success: true
-      })
-    } else {
-      res.status(404).json({ 
-        response: 'No data found',
-        success: false  
-      })
-    }    
-  } catch (error) {
-    res.status(400).json({ 
-      response: error, 
-      success: false })
-  }
-})
+//   try{
+//     const restaurantName = await Restaurant.findOne({ name: name })
+//     if(restaurantName){
+//       res.status(200).json({
+//         response: restaurantName,     
+//         success: true
+//       })
+//     } else {
+//       res.status(404).json({ 
+//         response: 'No data found',
+//         success: false  
+//       })
+//     }    
+//   } catch (error) {
+//     res.status(400).json({ 
+//       response: error, 
+//       success: false })
+//   }
+// })
 
 
-
-// app.get('/restaurants/:id', authenticateUser)
-app.get('/restaurants/:id', authenticateUser, async (req, res) => {
+app.get('/restaurants/:id', authenticateUser) 
+app.get('/restaurants/:id', async (req, res) => {
   const { id } = req.params
 
   try{
@@ -344,7 +343,7 @@ app.post('/login', async (req, res) => {
         success: true,
       })
     } else {
-      if (username === '') {                                //// Ska vi ha message, response, success? Eller ska response vara objektet som i de andra?
+      if (username === '') {                           
         res.status(404).json({
           message: 'Login failed: fill in username',
           response: error,
@@ -375,35 +374,6 @@ app.post('/login', async (req, res) => {
 
 
 //------- POST REVIEW -------//
-//V2
-// app.post('/reviews', authenticateUser, async (req, res) => {
-
-//   try {
-
-//     const { userId } = req.user._id
-//     const { review } = req.body
-
-//     console.log(`This is the req.user._id ${req.user._id}`)
-
-//     const newReview = await new Review({
-//       review: review,
-//       userId,
-//     }).save()
-
-//     console.log(newReview)
-
-//     res.status(201).json({ response: newReview, success: true })
-    
-//   } catch (error) {
-//     res.status(400).json({ 
-//       response: error, 
-//       success: false 
-//     })
-//   }
-// })
-
-
-//V1
 app.post('/reviews', authenticateUser, async (req, res) => {
   const { _id } = req.user._id
   const { review } = req.body
