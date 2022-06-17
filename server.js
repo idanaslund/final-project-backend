@@ -101,9 +101,14 @@ const ReviewSchema = new mongoose.Schema({
     type: Number,
     default: 0
   },
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
+  // user: {
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   ref: 'User'
+  // },
+  restaurant: {
+    type: String,
+    required: true,
+    trim: true
   },
   // author: {    /// Hur hämtar vi användarnamn automatiskt i inloggat läge?
   //   type: String,
@@ -204,7 +209,6 @@ app.get('/restaurants', (req, res) => {
 //   }
 // })
 
-
 app.get('/restaurants/:id', authenticateUser) 
 app.get('/restaurants/:id', async (req, res) => {
   const { id } = req.params
@@ -288,7 +292,7 @@ app.post('/signup', async (req, res) => {
 
     if (password.length < 8) {
       res.status(400).json({
-        response: "Your password must be at leat 8 characters long",
+        response: "Your password must be at least 8 characters long",
         success: false
       }) 
 
@@ -375,13 +379,15 @@ app.post('/login', async (req, res) => {
 
 //------- POST REVIEW -------//
 app.post('/reviews', authenticateUser, async (req, res) => {
-  const { _id } = req.user._id
+  // const { _id } = req.user._id
   const { review } = req.body
+  const { restaurant } = req.body
 
   try {
     const newReview = await new Review({
       review: review,
-      userId: _id
+      // userId: _id,
+      restaurant: restaurant
     }).save()
 
     if(newReview){
@@ -391,7 +397,8 @@ app.post('/reviews', authenticateUser, async (req, res) => {
           review: newReview.review,
           like: newReview.like,
           user: newReview.user,
-          createdAt: newReview.createdAt
+          createdAt: newReview.createdAt,
+          restaurant: newReview.restaurant 
         },  
         success: true 
       })
@@ -436,7 +443,6 @@ app.delete('/reviews/:id', authenticateUser, async (req, res) => {
 
 ///------LIST OF REVIEWS----------------///
 app.get('/reviews', authenticateUser, async (req,res) => {
-  // const {page, perPage} = req.query
 
   try {
     const allReviews = await Review.find({}).sort({createdAt: 'desc'}).limit(20)
