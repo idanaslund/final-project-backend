@@ -101,21 +101,16 @@ const ReviewSchema = new mongoose.Schema({
     type: Number,
     default: 0
   },
-  // user: {
-  //   type: mongoose.Schema.Types.ObjectId,
-  //   ref: 'User'
-  // },
+  author: {
+    type: String,
+    required: true,
+    trim: true
+  },
   restaurant: {
     type: String,
     required: true,
     trim: true
   },
-  // author: {    /// Hur hämtar vi användarnamn automatiskt i inloggat läge?
-  //   type: String,
-  //   maxLength: 20,
-  //   required: true,
-  //   trim: true
-  // },
   createdAt: {
     type: Date,
     default: () => new Date()
@@ -379,14 +374,14 @@ app.post('/login', async (req, res) => {
 
 //------- POST REVIEW -------//
 app.post('/reviews', authenticateUser, async (req, res) => {
-  // const { _id } = req.user._id
+  const { author } = req.body
   const { review } = req.body
   const { restaurant } = req.body
 
   try {
     const newReview = await new Review({
       review: review,
-      // userId: _id,
+      author: author,
       restaurant: restaurant
     }).save()
 
@@ -396,7 +391,7 @@ app.post('/reviews', authenticateUser, async (req, res) => {
           _id: newReview._id,
           review: newReview.review,
           like: newReview.like,
-          user: newReview.user,
+          author: newReview.author,
           createdAt: newReview.createdAt,
           restaurant: newReview.restaurant 
         },  
