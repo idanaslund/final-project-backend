@@ -209,9 +209,7 @@ app.get('/restaurants', (req, res) => {
 //   }
 // })
 
-
-
-app.get('/restaurants/:id', authenticateUser)
+app.get('/restaurants/:id', authenticateUser) 
 app.get('/restaurants/:id', async (req, res) => {
   const { id } = req.params
 
@@ -349,7 +347,7 @@ app.post('/login', async (req, res) => {
         success: true,
       })
     } else {
-      if (username === '') {                               
+      if (username === '') {                           
         res.status(404).json({
           message: 'Login failed: fill in username',
           response: error,
