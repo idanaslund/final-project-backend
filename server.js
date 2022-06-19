@@ -12,8 +12,6 @@ const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/project-mongo"
 mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true })
 mongoose.Promise = Promise
 
-
-// User model with validation rules: username, password and default accessToken with crypto library
 const RestaurantSchema = new mongoose.Schema({
         id: String,
         name: String,
@@ -40,10 +38,6 @@ const RestaurantSchema = new mongoose.Schema({
 
 const Restaurant = mongoose.model('Restaurant', RestaurantSchema)
 
-
-
-
-// User model with validation rules: username, password and default accessToken with crypto library
 
 const UserSchema = new mongoose.Schema({
   username: {
@@ -119,13 +113,11 @@ const ReviewSchema = new mongoose.Schema({
 
 const Review = mongoose.model('Review', ReviewSchema)
 
-// Defines the port the app will run on. Defaults to 8080, but can be overridden
-// when starting the server. Example command to overwrite PORT env variable value:
-// PORT=9000 npm start
+
 const port = process.env.PORT || 8080
 const app = express()
 
-// Add middlewares to enable cors and json body parsing
+
 app.use(cors())
 app.use(express.json())
 
@@ -178,32 +170,8 @@ app.get('/restaurants', (req, res) => {
   }
  
 })
+
 //----------------------GET A SPECIFIC RESTAURANT--------------------//
-
-// endpoint for name
-// app.get('/restaurants/name/:name', async (req, res) => {
-//   const { name } = req.params
-
-//   try{
-//     const restaurantName = await Restaurant.findOne({ name: name })
-//     if(restaurantName){
-//       res.status(200).json({
-//         response: restaurantName,     
-//         success: true
-//       })
-//     } else {
-//       res.status(404).json({ 
-//         response: 'No data found',
-//         success: false  
-//       })
-//     }    
-//   } catch (error) {
-//     res.status(400).json({ 
-//       response: error, 
-//       success: false })
-//   }
-// })
-
 app.get('/restaurants/:id', authenticateUser) 
 app.get('/restaurants/:id', async (req, res) => {
   const { id } = req.params
@@ -282,7 +250,6 @@ app.post('/signup', async (req, res) => {
   const { username, password, email } = req.body
 
   try {
-    // salt -> randomizer
     const salt = bcrypt.genSaltSync()
 
     if (password.length < 8) {
@@ -313,7 +280,6 @@ app.post('/signup', async (req, res) => {
       }
       } catch (error) {
         res.status(400).json({
-            // message: error,
             response: error,
             success: false
         })
