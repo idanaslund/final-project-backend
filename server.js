@@ -379,29 +379,6 @@ app.post('/reviews', authenticateUser, async (req, res) => {
 })
 
 
-///--------DELETE REVIEWS----------///
-app.delete('/reviews/:id', authenticateUser, async (req, res) => {
-  const { id } = req.params
-  
-  try {
-    const deleted = await Review.findOneAndDelete({_id: id})
-    if (deleted) {
-      res.status(200).json({
-        response: deleted, 
-        success: true})
-    } else {
-      res.status(404).json({
-        response: 'Not found', 
-        success: false})
-    }
-  } catch (error) {
-    res.status(400).json({
-      response: error, 
-      success: false})
-  }
-})
-
-
 ///------LIST OF REVIEWS----------------///
 app.get('/reviews', authenticateUser, async (req,res) => {
 
@@ -421,27 +398,6 @@ app.get('/reviews', authenticateUser, async (req,res) => {
   }
 })
 
-
-///------- LIKES----------///
-app.post('/reviews/:id/like', authenticateUser, async (req, res) => {
-  const { id } = req.params
-  try {
-    const updateLike = await Review.findByIdAndUpdate(id, {$inc: {like: 1}})
-    if (updateLike) {
-      res.status(200).json({
-        response: 'You have liked this review', 
-        success: true})
-    } else {
-      res.status(404).json({
-        response: error, 
-        success: false})
-    }
-  } catch (error) {
-    res.status(400).json({
-      response: error, 
-      success: false})
-  }
-})
 
 
 //-------------------------START SERVER-------------------------//
