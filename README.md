@@ -25,4 +25,6 @@ Here is our backend made with Node.js, Express, MongoDB among other tools.
 
 https://restaurants-backend-database.herokuapp.com/
 
+Repo for frontend: https://github.com/idanaslund/final-project-frontend
+
 // Joanna Lodell, Emma Lindell, Ida Näslund
