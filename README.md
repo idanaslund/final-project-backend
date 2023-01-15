@@ -23,7 +23,7 @@ Here is our backend made with Node.js, Express, MongoDB among other tools.
 
 ## View it live
 
-https://new-restaurants-backend.herokuapp.com/
+https://new-restaurants-backend.herokuapp.com
 
 Repo for frontend: https://github.com/idanaslund/final-project-frontend
 
